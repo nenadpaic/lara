@@ -96,7 +96,8 @@
     <div class="overlay"></div>
 
     <div class="slider-text">
-    <div class="slide-content">Nenad Development</div>
+    <h2>Nenad Development</h2>
+    <h3><?php echo Lang::get('pocetna.slider'); ?></h3>
 
     </div>
 	
@@ -125,6 +126,9 @@
                 <li><a href="#work"><?php echo Lang::get('pocetna.link_portfolio'); ?></a></li>
                 <li><a href="#about"><?php echo Lang::get('pocetna.link_omeni'); ?></a></li>
                 <li><a href="#contact"><?php echo Lang::get('pocetna.link_kontakt'); ?></a></li>
+                <li><a href="#lang"><?php echo $text1; ?></a></li>
+           
+
 				
             </ul>
         </nav>
@@ -169,35 +173,35 @@
 							<!-- Item Project and Filter Name -->
                         	<li class="item-thumbs span3 design">
                             	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="<?php echo Lang::get('pocetna.work1') ?>" href="_include/img/work/full/image-01-full.png">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="<?php echo Lang::get('pocetna.work1') ?>" href="<?php echo asset('_include/img/work/full/image-01-full.png'); ?>">
                                 	<span class="overlay-img"></span>
                                     <span class="overlay-img-thumb font-icon-plus"></span>
                                 </a>
                                 <!-- Thumb Image and Description -->
-                                <img src="_include/img/work/thumbs/image-01.png" alt="<?php echo Lang::get('pocetna.work1_caption'); ?>">
+                                <img src="<?php echo asset('_include/img/work/thumbs/image-01.png'); ?>" alt="<?php echo Lang::get('pocetna.work1_caption'); ?>">
                             </li>
                         	<!-- End Item Project -->
 
 							<!-- Item Project and Filter Name -->
                         	<li class="item-thumbs span3 design">
                             	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="<?php echo Lang::get('pocetna.work2') ?>" href="_include/img/work/full/image-02-full.png">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="<?php echo Lang::get('pocetna.work2') ?>" href="<?php echo asset('_include/img/work/full/image-02-full.png'); ?>">
                                 	<span class="overlay-img"></span>
                                     <span class="overlay-img-thumb font-icon-plus"></span>
                                 </a>
                                 <!-- Thumb Image and Description -->
-                                <img src="_include/img/work/thumbs/image-02.png" alt="<?php echo Lang::get('pocetna.work2_caption'); ?>">
+                                <img src="<?php echo asset('_include/img/work/thumbs/image-02.png'); ?>" alt="<?php echo Lang::get('pocetna.work2_caption'); ?>">
                             </li>
                         	<!-- End Item Project -->
                             						<!-- Item Project and Filter Name -->
                         	<li class="item-thumbs span3 design">
                             	<!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="<?php echo Lang::get('pocetna.work3') ?>" href="_include/img/work/full/image-03-full.png">
+                            	<a class="hover-wrap fancybox" data-fancybox-group="gallery" title="<?php echo Lang::get('pocetna.work3') ?>" href="<?php echo asset('_include/img/work/full/image-03-full.png'); ?>">
                                 	<span class="overlay-img"></span>
                                     <span class="overlay-img-thumb font-icon-plus"></span>
                                 </a>
                                 <!-- Thumb Image and Description -->
-                                <img src="_include/img/work/thumbs/image-03.png" alt="<?php echo Lang::get('pocetna.work3_caption'); ?>">
+                                <img src="<?php echo asset('_include/img/work/thumbs/image-03.png'); ?>" alt="<?php echo Lang::get('pocetna.work3_caption'); ?>">
                             </li>
                         	<!-- End Item Project -->
 
@@ -221,7 +225,10 @@
         <div class="span12">
             <div class="title-page">
                 <h2 class="title"><?php echo Lang::get('pocetna.omeni_lead'); ?></h2>
-                <h3 class="title-description"><?php echo Lang::get('pocetna.omeni_caption'); ?></h3>
+                <h3 class="title-description"><?php echo Lang::get('pocetna.omeni_caption'); ?>
+
+
+                </h3>
             </div>
         </div>
     </div>
@@ -237,7 +244,7 @@
                     <span class="overlay-img"></span>
                     <span class="overlay-text-thumb"><?php echo Lang::get('pocetna.omeni1_lead'); ?></span>
                 </div>
-                <img src="_include/img/profile/profile-01.jpg" alt="Nenad Paic">
+                <img src="<?php echo asset('_include/img/profile/profile-01.jpg'); ?>" alt="Nenad Paic">
             </div>
             <h3 class="profile-name">Nenad Paic</h3>
             <p class="profile-description"><?php echo Lang::get('pocetna.omeni1_caption'); ?></p>
@@ -259,7 +266,7 @@
                     <span class="overlay-img"></span>
                     <span class="overlay-text-thumb"><?php echo Lang::get('pocetna.omeni2_lead'); ?></span>
                 </div>
-                <img src="_include/img/profile/profile-02.jpg" alt="How i work">
+                <img src="<?php echo asset('_include/img/profile/profile-02.jpg" alt="How i work'); ?>">
             </div>
             <h3 class="profile-name"><?php echo Lang::get('pocetna.omeni2_lead'); ?></h3>
             <p class="profile-description"><?php echo Lang::get('pocetna.omeni2_caption'); ?></p>
@@ -278,7 +285,7 @@
                     <span class="overlay-img"></span>
                     <span class="overlay-text-thumb"><?php echo Lang::get('pocetna.omeni3_lead'); ?></span>
                 </div>
-                <img src="_include/img/profile/profile-03.jpg" alt="Support">
+                <img src="<?php echo asset('_include/img/profile/profile-03.jpg" alt="Support'); ?>">
             </div>
             <h3 class="profile-name"><?php echo Lang::get('pocetna.omeni3_lead'); ?></h3>
             <p class="profile-description"><?php echo Lang::get('pocetna.omeni3_caption'); ?></p>
@@ -344,7 +351,7 @@
         	<div class="contact-details">
         		<h3><?php echo Lang::get('pocetna.kontakt'); ?></h3>
                 <ul>
-                    <li><a href="mailto:nenadpaic@gmail.com">nenadpaic@gmail.com</a></li>
+                    <li><a href="mailto:nenadpaic@nwebdevelopment.com">nenadpaic@nwebdevelopment.com</a></li>
                     <li>(+381)65-812-6235</li>
                     <li>
                         Nenad development
@@ -355,6 +362,7 @@
         </div>
     </div>
     <!-- End Contact Form -->
+    <h3 id="lang" style="text-align:center"><a href="<?php echo $link; ?>"><?php echo $text; ?></a></h3>
 </div>
 </div>
 <!-- End Contact Section -->
@@ -383,7 +391,7 @@
 
 <!-- Footer -->
 <footer>
-	<p class="credits">&copy;2014 Nenad Paic.
+	<p class="credits">&copy;<?php echo date('Y') ?> Nenad Paic.
 </footer>
 <!-- End Footer -->
 

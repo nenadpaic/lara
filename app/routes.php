@@ -17,7 +17,7 @@
 Route::get('/', array('uses' => 'PocetnaController@index' ));
 
 Route::get('pocetna', array('uses'=>'PocetnaController@index'));
-Route::get('pocetna_en', array('uses'=>'PocetnaController@index'));
+Route::get('pocetna_sr', array('uses'=>'PocetnaController@index'));
 Route::post('send_message', function(){
 	 $rules = array(
 	 	'ime' => 'required|min:3',
@@ -44,10 +44,10 @@ Route::post('send_message', function(){
         return Redirect::to('pocetna/#contact-form')->withErrors($validator);
     }
 
-    	Mail::send('email.body',  array('ime' => Input::get('ime'),
-					'email' => Input::get('email'),
+    	Mail::send('email.body',  array('ime' => e(Input::get('ime')),
+					'email' => e(Input::get('email')),
 
-					'poruka' => Input::get('poruka')  ), function($message)
+					'poruka' => e(Input::get('poruka'))  ), function($message)
 {
     $message->to('nenadpaic@gmail.com', Input::get('ime'))->subject('poruka sa nenad development');
 });
@@ -55,6 +55,27 @@ Route::post('send_message', function(){
 });
 Route::get('support', array('before' => 'auth', 'uses' => 'SupportController@index'));
 
-Route::get('support/tiketi', array('uses' => 'SupportController@tickets'));
+
 Route::get('support/tiket_new', array('uses' => 'SupportController@tiket_new'));
-Route::post('support/tiket_create', array('uses' => 'SupportController@tiket_create'));
+Route::post('support/tiket_create', array('before' => 'csrf', 'uses' => 'SupportController@tiket_create'));
+/*
+----------------------------
+user interface
+----------------------------
+*/
+Route::get('support/tiketi', array('before' => 'auth', 'uses' => 'SupportController@tickets'));
+/*
+-------------------------------------
+admin interface
+-------------------------------------
+*/
+Route::get('admin', array('before' => 'inGroup:Admins', 'uses' => 'SupportController@admin_news'));
+Route::get('admin/tickets', array('before' => 'inGroup:Admins','uses' => 'SupportController@admin_tickets'));
+Route::get('admin/add_news', array('before' => 'inGroup:Admins','uses' => 'SupportController@news_add'));
+Route::post('admin/create_news', array( 'before' => 'csrf|inGroup:Admins', 'uses' => 'SupportController@create_news' ));
+Route::get('admin/delete_news/{id}', array('before'=> 'inGroup:Admins', 'uses' => 'SupportController@delete_news'));
+Route::get('admin/edit_news/{id}', array('before' => 'inGroup:Admins', 'uses' => 'SupportController@edit_news'));
+Route::post('admin/edit_news_do/{id}', array('before' => 'csrf|inGroup:Admins' , 'uses' => 'SupportController@edit_news_do' ));
+Route::get('admin/delete_tickets/{id}', array('before' => 'inGroup:Admins', 'uses' => 'SupportController@delete_tickets'));
+Route::get('admin/menage_tickets/{id}', array('before' => 'inGroup:Admins', 'uses' => 'SupportController@menage_tickets'));
+Route::post('admin/menage_tickets_do/{id}', array('before' => 'inGroup:Admins', 'uses' => 'SupportController@menage_tickets_do'));

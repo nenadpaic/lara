@@ -39,6 +39,15 @@
     #new_ticket:hover{
         background-color: #DE5E60;
     }
+    .errors-form{
+        color: red;
+        text-align: left;
+    }
+    .success-message{
+        text-align: left;
+        color: green;
+        font-size: 1.2em;
+    }
 </style>
 
 <script>
@@ -157,9 +166,16 @@ $('#forma').html("error");
                                             <div class="box-post-header">
                                             	<h3 class="c-name">Nenad Development</h3>
                                               <?php if(Session::has('poruka')){
-                                                echo Session::get('poruka');
+                                                echo "<ul><li class='success-message'>".Session::get('poruka')."</li></ul>";
                                                 } ?>
-                                               
+                                               @if($errors->has())
+                                               <ul class="errors-form">
+                                                   {{ $errors->first('subject', '<li>Subject field- :message</li>') }}
+                                                   {{ $errors->first('cat', '<li>:message</li>') }}
+                                                   {{ $errors->first('description', '<li>Description field- :message</li>') }}
+
+                                               </ul>
+                                               @endif
                                             </div>
                                             <div class="box-post-container">
                                             	<h3 class="c-title">Welcomme to support section</h3>
@@ -198,19 +214,9 @@ $('#forma').html("error");
                                                 <h4 class="credits">Documetation for your application</h4>
                                             </div>
                                             <div class="box-post-container">
-                                                <h3 class="c-title">HTML Structure</h3>
+                                                <h3 class="c-title">This section is under contruction</h3>
                                                 <div class="c-text">
-                                                    <p>This Template has a Responsive layout and is based on the <strong>Bootstrap Framework</strong>.
-                                                    For more information about this visit <a href="http://twitter.github.io/bootstrap/scaffolding.html" target="_blank">Bootstrap Scaffolding</a>.</p>
-                                                    
-                                                    <p>The default Bootstrap grid system utilizes 12 columns, making for a 940px wide container without responsive features enabled. 
-                                                    With the responsive CSS file added, the grid adapts to be 724px and 1170px wide depending on your viewport. Below 767px viewports, the columns become fluid and stack vertically.</p>
-                                                    
-                                                    <h3 class="c-title">Basic Grid HTML</h3>
-                                                    <p>For a simple two column layout, create a <strong>.row</strong> and add the appropriate number of <strong>.span*</strong> columns. As this is a 12-column grid, each <strong>.span*</strong> spans a 
-                                                    number of those 12 columns, and should always add up to 12 for each row (or the number of columns in the parent).</p>
-                                                    
-                                                    <p>Given this example, we have <strong>.span4</strong> and <strong>.span8</strong>, making for 12 total columns and a complete row.</p>
+                                                   <p>This section is under contruction, will be over soon</p>
                                                     
                                           
                                                     
@@ -222,13 +228,13 @@ $('#forma').html("error");
                                         <!-- Top Content -->
                                         <div class="box-post-content">
                                             <div class="box-post-header">
-                                                <h3 class="c-name">Brushed - Responsive One Page Template</h3>
-                                                <h4 class="credits">By Alessio Atzeni - <a href="http://www.alessioatzeni.com" target="_blank">www.alessioatzeni.com</a></h4>
+                                                <h3 class="c-name">Help</h3>
+                                                <h4 class="credits">Help documentation about support section</h4>
                                             </div>
                                             <div class="box-post-container">
-                                                <h3 class="c-title">HEAD/CSS Structure</h3>
+                                                <h3 class="c-title">Under contruction</h3>
                                                 <div class="c-text">
-                                                    <p>These are the css files that are loaded into templates in <strong>Head Section</strong>.</p>
+                                                    <p>This section is under contruction, will be over soon</p>
                                                  
                                                 </div>
                                             </div>

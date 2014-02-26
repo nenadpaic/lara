@@ -2,6 +2,7 @@
 
 return 
 array(
+	'slider'         => 'You need good looking, fast and secure website? This is right place for you.',
 	'link_pocetna'   => 'Home',
 	'link_omeni'     => 'About me',
 	'link_portfolio' => 'Portfolio',

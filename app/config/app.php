@@ -52,7 +52,7 @@ return array(
 	|
 	*/
 
-	'locale' => 'sr',
+	'locale' => 'en',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -109,6 +109,7 @@ return array(
 		'Sentinel\SentinelServiceProvider',
 		
 
+		
 	),
 
 	/*

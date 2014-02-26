@@ -2,6 +2,7 @@
 
 return 
 array(
+	'slider'         => 'Treba vam moderan, brz i siguran web sajt? Na pravom ste mestu.',
 	'link_pocetna'   => 'Pocetna',
 	'link_omeni'     => 'O meni',
 	'link_portfolio' => 'Portfolio',

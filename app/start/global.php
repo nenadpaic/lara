@@ -79,3 +79,11 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+Event::listen('tiket.poslat', function($email){
+
+Mail::send('email.tiket', array('email' => $email), function($message)
+{
+    $message->to('nenadpaic@gmail.com', 'Tiketi')->subject('Novi tiket je primljen');
+});
+});

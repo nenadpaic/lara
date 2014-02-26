@@ -19,6 +19,21 @@ td{
 	font-weight: bolder;
 	cursor: pointer;
 }
+.pagination{
+	background-color: #d3d3d3;
+	width: 100%;
+}
+.pagination li{
+	display: inline-block;
+	list-style: none;
+	padding: 5px;
+
+	
+}
+.no-active{
+	text-align: center;
+}
+
 
 
 	</style>
@@ -31,6 +46,7 @@ $( document ).tooltip();
 });
 </script>
 </head>
+<?php if(count($tickets) > 0){ ?>
 <table>
 <td class="head">Title</td>
 <td class="head">Answer</td>
@@ -56,5 +72,9 @@ Answered
 	
 @endforeach
 </table>
+<?php }else{ ?>
+<h2 class="no-active">There is no active tickets</h2>
+<?php } ?>
+<?php echo $tickets->links(); ?>
 </body>
 </html>
